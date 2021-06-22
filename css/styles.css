@@ -1,0 +1,969 @@
+/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
+html {
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
+}
+body {
+  margin: 0;
+}
+main {
+  display: block;
+}
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+hr {
+  box-sizing: content-box;
+  height: 0;
+  overflow: visible;
+}
+pre {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+a {
+  background-color: transparent;
+}
+abbr[title] {
+  border-bottom: none;
+  text-decoration: underline;
+  text-decoration: underline dotted;
+}
+b,
+strong {
+  font-weight: bolder;
+}
+code,
+kbd,
+samp {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+small {
+  font-size: 80%;
+}
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+sub {
+  bottom: -0.25em;
+}
+sup {
+  top: -0.5em;
+}
+img {
+  border-style: none;
+}
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit;
+  font-size: 100%;
+  line-height: 1.15;
+  margin: 0;
+}
+button,
+input {
+  overflow: visible;
+}
+button,
+select {
+  text-transform: none;
+}
+[type="button"],
+[type="reset"],
+[type="submit"],
+button {
+  -webkit-appearance: button;
+}
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner,
+button::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring,
+button:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+fieldset {
+  padding: 0.35em 0.75em 0.625em;
+}
+legend {
+  box-sizing: border-box;
+  color: inherit;
+  display: table;
+  max-width: 100%;
+  padding: 0;
+  white-space: normal;
+}
+progress {
+  vertical-align: baseline;
+}
+textarea {
+  overflow: auto;
+}
+[type="checkbox"],
+[type="radio"] {
+  box-sizing: border-box;
+  padding: 0;
+}
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+[type="search"] {
+  -webkit-appearance: textfield;
+  outline-offset: -2px;
+}
+[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  font: inherit;
+}
+details {
+  display: block;
+}
+summary {
+  display: list-item;
+}
+template {
+  display: none;
+}
+[hidden] {
+  display: none;
+}
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap");
+:root {
+  --first-color: #ff2e63;
+  --second-color: #252a34;
+  --third-color: #08d9d6;
+  --white-color: #fff;
+  --gray-light-color: #f3f3f3;
+  --gray-color: #ccc;
+  --gray-dark-color: #666;
+  --black-gray-color: #222;
+  --black-color: #000;
+  --link-color: #509ee3;
+  --title-color: #333;
+  --text-dark-color: #222;
+  --text-light-color: #f3f3f3;
+  --white-alpha-color: rgba(255, 255, 255, 0.5);
+  --black-alpha-color: rgba(0, 0, 0, 0.5);
+  --background-light: #f3f3f3;
+  --background-dark: #111111;
+  --font: "Open Sans", sans-serif;
+  --max-width: 1200px;
+  --header-height: 4rem;
+  --breakpoint-nm: 576px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 992px;
+  --breakpoint-xl: 1200px;
+}
+
+/* ------ Resets ------ */
+
+html {
+  box-sizing: border-box;
+  font-family: var(--font);
+  font-size: 18px;
+  scroll-behavior: smooth;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+  color: var(--text-dark-color);
+  background-color: var(--background-light);
+}
+
+a {
+  color: var(--link-color);
+  transition: all 0.5s ease-out;
+  text-decoration: none;
+}
+
+a:hover {
+  opacity: 0.75;
+}
+
+h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+h2 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+h3 {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+h4 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+h5 {
+  margin: 0;
+  font-size: 0.85rem;
+}
+
+h6 {
+  margin: 0;
+  font-size: 0.7rem;
+}
+
+img {
+  vertical-align: top;
+  width: 100%;
+  height: auto;
+}
+
+p {
+  line-height: 1.6;
+}
+
+ul {
+  list-style: none;
+}
+
+/*  Go top  */
+.go-top {
+  position: fixed;
+  bottom: 5rem;
+  right: -4rem;
+  width: 2.7rem;
+  height: 2.7rem;
+  border: 2px solid var(--first-color);
+  background-color: var(--gray-light-color);
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: 0.4s all ease;
+}
+
+.go-top svg {
+  transform: rotate(90deg);
+  width: 20px;
+  color: var(--first-color);
+}
+
+.go-top:hover svg {
+  color: var(--gray-light-color);
+}
+
+.go-top:hover {
+  border: var(--gray-light-color);
+  background: var(--first-color);
+}
+
+/*  Go top  */
+
+/*  Skew  */
+.skew-abajo {
+  position: absolute;
+  bottom: -0.5vh;
+  left: 0;
+  z-index: 999;
+  border-width: 0 0 7vh 100vw;
+  border-style: solid;
+  border-color: transparent transparent var(--gray-light-color) transparent;
+}
+
+.skew-arriba {
+  position: absolute;
+  top: -0.5vh;
+  left: 0;
+  z-index: 999;
+  border-width: 7vh 100vw 0 0;
+  border-style: solid;
+  border-color: var(--gray-light-color) transparent transparent transparent;
+}
+
+/*  Skew  */
+
+/*  Menu de navegacion  */
+.header {
+  position: relative;
+  width: 100%;
+}
+
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3.5rem;
+  background: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 999;
+  transition: 0.5s all ease;
+}
+
+.nav .logo-box {
+  margin-left: 1rem;
+}
+
+.nav .logo-box h2 a {
+  font-size: 2rem;
+  font-weight: 400;
+  color: var(--second-color);
+}
+
+.nav .list-container {
+  margin-right: 1rem;
+}
+
+.nav .list-container .list {
+  display: flex;
+}
+
+.nav .list-container .list li {
+  list-style: none;
+}
+
+.nav .list-container .list li a {
+  text-decoration: none;
+  margin: 0 0.6rem;
+  padding: 0.5rem;
+  color: var(--second-color);
+  font-size: 1rem;
+  border-radius: 24px;
+  transition: all 0.3s ease;
+}
+
+.nav .list-container .list li a.active {
+  background-color: var(--first-color);
+  color: var(--gray-light-color);
+}
+
+.nav .list-container .list li a:hover {
+  background-color: var(--first-color);
+  color: var(--gray-light-color);
+}
+
+.btn-nav > svg {
+  display: none;
+}
+/*  Menu de navegacion  */
+
+/*  IMG Header  */
+.img-header {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: url(https://i.ibb.co/72d2P3j/header.jpg);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.img-header .welcome {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.img-header .welcome h2 {
+  font-size: 3rem;
+  color: var(--text-light-color);
+  font-weight: 300;
+  text-align: center;
+}
+
+.img-header .welcome p {
+  font-size: 1rem;
+  color: var(--text-light-color);
+  margin-top: 1rem;
+}
+.img-header .welcome > button {
+  width: 170px;
+  height: 3rem;
+  background-color: var(--first-color);
+  border-radius: 24px;
+  border: none;
+  outline: none;
+  font-size: 1.2rem;
+  color: var(--text-light-color);
+  text-align: center;
+  margin-top: 1.1rem;
+  cursor: pointer;
+  transition: 0.5s all ease;
+}
+
+.img-header .welcome > button:hover {
+  background-color: var(--third-color);
+}
+/*  IMG Header  */
+
+/*  Acerca de Nosotros  */
+.acerca-de {
+  width: 100%;
+  margin-top: 5rem;
+}
+
+.acerca-de .info-container {
+  width: 80%;
+  margin: auto;
+  display: fixed;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.acerca-de .info-container h2 {
+  font-size: 2.8rem;
+  color: var(--text-dark-color);
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.acerca-de .info-container p {
+  text-align: center;
+  font-size: 1rem;
+  color: var(--text-dark-color);
+  line-height: 1.8rem;
+  margin: 0.55rem 0;
+}
+
+.acerca-de .info-container .about-gallery {
+  width: 100%;
+  justify-content: center;
+  margin: 2.5rem 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 0.5rem;
+}
+
+.acerca-de .info-container .about-gallery img {
+  height: 300px;
+  object-fit: cover;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.acerca-de .info-container .about-more {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.acerca-de .info-container .about-more button {
+  width: 120px;
+  height: 3rem;
+  background-color: var(--first-color);
+  border-radius: 24px;
+  border: none;
+  outline: none;
+  font-size: 1.2rem;
+  color: var(--text-light-color);
+  text-align: center;
+  margin-top: 1.1rem;
+  cursor: pointer;
+  transition: 0.5s all ease;
+}
+
+.acerca-de .info-container .about-more button:hover {
+  background-color: var(--third-color);
+}
+/*  Acerca de Nosotros  */
+
+/*  Nuestros Proyectos  */
+.our-projects {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: url(https://i.ibb.co/KzcP7n8/img-2.jpg);
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  margin-top: 5rem;
+}
+
+.our-projects .deg-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.our-projects .ejeZproject {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.our-projects .container-projects {
+  width: 90%;
+  margin: auto;
+  padding-top: 5.5rem;
+}
+
+.our-projects .container-projects .project-title {
+  border: 2px solid var(--gray-light-color);
+  padding: 0.55rem;
+  text-align: center;
+  width: 50%;
+  margin: auto;
+}
+
+.our-projects .container-projects .project-title h3 {
+  color: var(--text-light-color);
+  font-size: 2.2rem;
+  font-weight: 300;
+}
+
+.our-projects .container-projects .project-title hr {
+  background-color: var(--gray-light-color);
+  width: 50%;
+  margin: 0.5rem auto;
+}
+
+.our-projects .container-projects .project-img {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: minmax(0.9fr, 250px);
+  gap: 0.5rem;
+  margin-top: 3.4rem;
+  padding-bottom: 5.5rem;
+}
+
+.our-projects .container-projects .project-img img {
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.our-projects .container-projects .project-img img:hover {
+  opacity: 0.8;
+}
+
+/*  Nuestros Proyectos  */
+
+/*  Testimonios  */
+.testimonios {
+  width: 100%;
+  margin-top: 6rem;
+}
+
+.testimonios .testimonios-title {
+  width: 50%;
+  margin: auto;
+  text-align: center;
+}
+
+.testimonios .testimonios-title h3 {
+  font-size: 2.8rem;
+  color: var(--second-color);
+  font-weight: 300;
+  margin-bottom: 10px;
+}
+
+.testimonios .testimonios-title hr {
+  width: 60%;
+  margin: auto;
+  height: 2px;
+  background-color: var(--second-color);
+  border: none;
+}
+
+.testimonios .box-testimonios {
+  width: 90%;
+  margin: 4.5rem auto;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.testimonios .box-testimonios .card-testimonios {
+  width: 45%;
+  margin: 1rem;
+}
+
+.testimonios .box-testimonios .card-testimonios .card-img {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.testimonios .box-testimonios .card-testimonios .card-img img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.testimonios .box-testimonios .card-testimonios .testimonios-text {
+  width: 100%;
+  border: 2px solid var(--first-color);
+  padding: 1rem;
+  margin-top: 1.5rem;
+  border-radius: 1rem;
+  cursor: pointer;
+  transition: 300ms all ease;
+}
+
+.testimonios .box-testimonios .card-testimonios .testimonios-text h4 {
+  color: var(--first-color);
+  font-weight: normal;
+  font-size: 1.5rem;
+  text-align: center;
+  margin-bottom: 1rem;
+  transition: 300ms all ease;
+}
+
+.testimonios .box-testimonios .card-testimonios .testimonios-text p {
+  font-size: 1.1rem;
+  color: var(--second-color);
+  text-align: center;
+  line-height: 1.8rem;
+  transition: 300ms all ease;
+}
+
+.testimonios .box-testimonios .card-testimonios .testimonios-text:hover {
+  border: 2px solid var(--third-color);
+}
+
+.testimonios .box-testimonios .card-testimonios .testimonios-text:hover h4 {
+  color: var(--third-color);
+}
+
+/*  Testimonios  */
+
+/*  Fotter  */
+.footer {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background: url(https://i.ibb.co/ScMxNgG/footer.jpg);
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+}
+
+.footer .deg-footer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: var(--black-alpha-color);
+}
+
+.footer .ejeZfooter {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.footer .footer-content {
+  width: 90%;
+  padding-top: 5.5rem;
+  margin: auto;
+  padding-bottom: 150px;
+}
+
+.footer .footer-content .footer-title {
+  width: 50%;
+  margin: auto;
+  border: 2px solid var(--text-light-color);
+  padding: 0.8rem;
+}
+
+.footer .footer-content .footer-title h3 {
+  text-align: center;
+  color: var(--text-light-color);
+  font-size: 1.6rem;
+  font-weight: 300;
+  margin-bottom: 0.5rem;
+}
+
+.footer .footer-content .footer-title hr {
+  width: 80%;
+  margin: auto;
+}
+
+.footer .footer-content .formulario-content {
+  width: 60%;
+  background: var(--gray-light-color);
+  border-radius: 1rem;
+  border: 2px solid var(--first-color);
+  margin: 2.8rem auto;
+  padding: 1.5rem;
+  margin-bottom: 0;
+}
+
+.footer .footer-content .formulario-content #formulario {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.footer .footer-content .formulario-content #formulario label {
+  text-align: center;
+  color: var(--second-color);
+  font-size: 1.3rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.footer .footer-content .formulario-content #formulario input {
+  width: 90%;
+  height: 2rem;
+  margin: auto;
+  border: 2px solid var(--first-color);
+  border-radius: 1.2rem;
+  outline: none;
+  text-align: center;
+  font-size: 17px;
+  color: var(--second-color);
+}
+
+.footer .footer-content .formulario-content #formulario textarea {
+  width: 90%;
+  height: 11rem;
+  margin: auto;
+  border: 2px solid var(--first-color);
+  border-radius: 1.2rem;
+  outline: none;
+  font-size: 15px;
+  color: var(--second-color);
+  padding: 1rem;
+}
+
+.footer .footer-content .formulario-content #formulario .send {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0;
+}
+
+.footer .footer-content .formulario-content #formulario .send button {
+  width: 8rem;
+  height: 2.2rem;
+  background-color: var(--first-color);
+  border-radius: 24px;
+  border: none;
+  outline: none;
+  font-size: 1.2rem;
+  color: var(--text-light-color);
+  text-align: center;
+  margin-top: 1.1rem;
+  cursor: pointer;
+  transition: 0.5s all ease;
+}
+
+.footer .footer-content .formulario-content #formulario .send button:hover {
+  background-color: var(--third-color);
+}
+
+.footer .footer-content .footer-text {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3.5rem;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-top: 5px solid var(--gray-light-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer .footer-content .footer-text p {
+  color: var(--text-light-color);
+}
+
+/*  Fotter  */
+
+/*  Media Query  */
+@media screen and (max-width: 900px) {
+  .btn-nav > svg {
+    display: block;
+    position: absolute;
+    top: 1.1rem;
+    right: 1.6rem;
+    width: 1.5rem;
+    cursor: pointer;
+    transition: 0.5s all ease;
+  }
+  .btn-nav:hover svg {
+    color: var(--first-color);
+  }
+  .btn-nav.is-active > svg {
+    color: var(--first-color);
+  }
+
+  .nav .list-container {
+    position: absolute;
+    top: 60px;
+    left: -100%;
+    width: 100%;
+    height: calc(100vh - 60px);
+    background: var(--white-color);
+    transition: 0.5s all ease;
+  }
+  .nav .list-container.active {
+    left: 0;
+  }
+
+  .nav .list-container .list {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-top: 5px solid var(--first-color);
+  }
+
+  .nav .list-container .list li {
+    width: 90%;
+    margin: 0.5rem 0;
+    border-bottom: 1px solid var(--first-color);
+    text-align: center;
+  }
+
+  .nav .list-container .list li a {
+    display: inline-block;
+  }
+
+  .nav .list-container .list li a.active {
+    background: none;
+    color: var(--first-color);
+  }
+
+  .nav .list-container .list li a:hover {
+    background: none;
+    color: var(--first-color);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  /*  IMG Header  */
+  .img-header .welcome h2 {
+    font-size: 2rem;
+    color: var(--text-light-color);
+    font-weight: 300;
+  }
+
+  .img-header .welcome > button {
+    width: 110px;
+    font-size: 1rem;
+  }
+
+  /*  Acerca de Nosotros  */
+  .acerca-de .info-container .about-gallery {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1rem;
+  }
+
+  /*  Nuestros Proyectos  */
+  .our-projects .container-projects .project-title h3 {
+    font-size: 1.4rem;
+  }
+
+  .our-projects .container-projects .project-img {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 890px) {
+  /*  Testimonios  */
+  .testimonios .box-testimonios .card-testimonios .card-img img {
+    width: 200px;
+    height: 200px;
+  }
+
+  .testimonios .box-testimonios .card-testimonios {
+    width: 100%;
+  }
+
+  .testimonios .box-testimonios .card-testimonios .testimonios-text h4 {
+    font-size: 1.4rem;
+  }
+
+  .testimonios .box-testimonios .card-testimonios .testimonios-text p {
+    font-size: 1rem;
+    line-height: 1.9rem;
+  }
+
+  /*  Footer  */
+  .footer .footer-content .footer-title h3 {
+    font-size: 1.3rem;
+  }
+
+  .footer .footer-content .formulario-content {
+    width: 85%;
+  }
+
+  .footer .footer-content .formulario-content #formulario input {
+    width: 100%;
+  }
+
+  .footer .footer-content .formulario-content #formulario textarea {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 578px) {
+  /*  IMG Header  */
+  .img-header .welcome h1 {
+    font-size: 1.5rem;
+  }
+
+  .img-header .welcome hr {
+    width: 100%;
+    margin-top: 1rem;
+  }
+
+  .img-header .welcome p {
+    font-size: 1rem;
+  }
+
+  .img-header .welcome > button {
+    width: 100px;
+    font-size: 1rem;
+  }
+
+  .footer .footer-content .formulario-content {
+    width: 100%;
+  }
+}
